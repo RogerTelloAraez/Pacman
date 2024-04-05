@@ -27,7 +27,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -118,6 +118,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Avatar.cpp" />
     <ClCompile Include="BigDot.cpp" />
     <ClCompile Include="Cherry.cpp" />
@@ -129,11 +130,14 @@
     <ClCompile Include="MovableGameEntity.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="PathmapTile.cpp" />
+    <ClCompile Include="State.cpp" />
     <ClCompile Include="StaticGameEntity.cpp" />
+    <ClCompile Include="Teleport.cpp" />
     <ClCompile Include="Vector2f.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Avatar.h" />
     <ClInclude Include="BigDot.h" />
     <ClInclude Include="Cherry.h" />
@@ -144,7 +148,9 @@
     <ClInclude Include="MovableGameEntity.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="PathmapTile.h" />
+    <ClInclude Include="State.h" />
     <ClInclude Include="StaticGameEntity.h" />
+    <ClInclude Include="Teleport.h" />
     <ClInclude Include="Vector2f.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
