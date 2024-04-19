@@ -4,7 +4,7 @@
 #include "MovableGameEntity.h"
 #include "Vector2f.h"
 
-enum AvatarStates
+enum AvatarStateType
 {
 	MOVING_UP,
 	MOVING_DOWN,
@@ -21,8 +21,11 @@ public:
 	void Update(float aTime);
 	void InitStates() override;
 
-private:
+	void AddState(State* newState, AvatarStateType stateType);
+	void ChangeState(const AvatarStateType newState);
 
+private:
+	std::map<AvatarStateType, State*> stateList;
 
 };
 

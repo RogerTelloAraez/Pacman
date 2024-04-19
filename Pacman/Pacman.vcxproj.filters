@@ -31,6 +31,9 @@
     <Filter Include="Game\GameUtils\States">
       <UniqueIdentifier>{4d6310db-6d75-404d-8483-4ad0ae37d592}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\GameUtils\States\Movement States">
+      <UniqueIdentifier>{b345765a-c4e4-449f-9183-709b3615d5ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pacman.cpp">
@@ -82,14 +85,20 @@
     <ClCompile Include="State.cpp">
       <Filter>Game\GameUtils\States</Filter>
     </ClCompile>
-    <ClCompile Include="State_MoveUp.cpp">
-      <Filter>Game\GameUtils\States</Filter>
-    </ClCompile>
     <ClCompile Include="RenderModule.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Graphics</Filter>
+    <ClCompile Include="State_MoveUp.cpp">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClCompile>
+    <ClCompile Include="State_MoveDown.cpp">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClCompile>
+    <ClCompile Include="State_MoveLeft.cpp">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClCompile>
+    <ClCompile Include="State_MoveRight.cpp">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,17 +150,26 @@
     <ClInclude Include="State.h">
       <Filter>Game\GameUtils\States</Filter>
     </ClInclude>
-    <ClInclude Include="StateData.h">
-      <Filter>Game\GameUtils\States</Filter>
-    </ClInclude>
-    <ClInclude Include="State_MoveUp.h">
-      <Filter>Game\GameUtils\States</Filter>
-    </ClInclude>
     <ClInclude Include="RenderModule.h">
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MoveUp.h">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MoveDown.h">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MoveLeft.h">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MoveRight.h">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementStates.h">
+      <Filter>Game\GameUtils\States\Movement States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

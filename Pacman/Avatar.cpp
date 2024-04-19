@@ -1,9 +1,9 @@
 #include "Avatar.h"
 #include "State.h"
-#include "State_MoveUp.h"
+#include "MovementStates.h";
 
 Avatar::Avatar(const Vector2f& aPosition)
-	: MovableGameEntity(aPosition, "open_32.png")
+	: MovableGameEntity(aPosition, "")
 {
 
 }
@@ -24,7 +24,7 @@ void Avatar::Update(float aTime)
 	Vector2f destination((float)myNextTileX * tileSize, (float)myNextTileY * tileSize);
 	Vector2f direction = destination - myPosition;
 
-	float distanceToMove = aTime * 30.f;
+	float distanceToMove = aTime * 250.f;
 
 	if (distanceToMove > direction.Length())
 	{
@@ -41,6 +41,28 @@ void Avatar::Update(float aTime)
 
 void Avatar::InitStates()
 {
+	State_MoveDown* state_moveDown = new State_MoveDown(*this);
+	AddState(state_moveDown, MOVING_DOWN);
+
+	State_MoveLeft* state_moveLeft = new State_MoveLeft(*this);
+	AddState(state_moveLeft, MOVING_LEFT);
+
 	State_MoveUp* state_moveUp = new State_MoveUp(*this);
-	currentState = state_moveUp;
+	AddState(state_moveUp, MOVING_UP);
+
+	State_MoveRight* state_moveRight = new State_MoveRight(*this);
+	AddState(state_moveRight, MOVING_RIGHT);
+
+	ChangeState(MOVING_UP);
+}
+
+void Avatar::AddState(State* newState, AvatarStateType stateType)
+{
+	stateList.insert(std::pair<AvatarStateType, State*>(stateType, newState));
+}
+
+void Avatar::ChangeState(const AvatarStateType newState)
+{
+	currentState = stateList[newState];
+	currentState->OnEnter();
 }

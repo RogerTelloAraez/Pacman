@@ -132,10 +132,12 @@
     <ClCompile Include="PathmapTile.cpp" />
     <ClCompile Include="RenderModule.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="State_MoveDown.cpp" />
+    <ClCompile Include="State_MoveLeft.cpp" />
+    <ClCompile Include="State_MoveRight.cpp" />
     <ClCompile Include="State_MoveUp.cpp" />
     <ClCompile Include="StaticGameEntity.cpp" />
     <ClCompile Include="Teleport.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vector2f.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -148,12 +150,15 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="Ghost.h" />
+    <ClInclude Include="MovementStates.h" />
     <ClInclude Include="MovableGameEntity.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="PathmapTile.h" />
     <ClInclude Include="RenderModule.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="StateData.h" />
+    <ClInclude Include="State_MoveDown.h" />
+    <ClInclude Include="State_MoveLeft.h" />
+    <ClInclude Include="State_MoveRight.h" />
     <ClInclude Include="State_MoveUp.h" />
     <ClInclude Include="StaticGameEntity.h" />
     <ClInclude Include="Teleport.h" />

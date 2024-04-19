@@ -71,6 +71,7 @@ bool Pacman::Update(float aTime)
 	if (!UpdateInput())
 		return false;
 
+	// This will be moved to the score system
 	if (CheckEndGameCondition())
 	{
 		myDrawer->DrawText("You win!", "freefont-ttf\\sfd\\FreeMono.ttf", 20, 70);
@@ -84,11 +85,13 @@ bool Pacman::Update(float aTime)
 
 	UpdateGameEntities(aTime);
 
+	// This will be moved to the score system
 	if (myWorld->HasIntersectedDot(myAvatar->GetPosition()))
 		myScore += 10;
 
 	myGhostGhostCounter -= aTime;
 
+	// This will be moved to the score system
 	if (myWorld->HasIntersectedBigDot(myAvatar->GetPosition()))
 	{
 		myScore += 20;
@@ -127,15 +130,27 @@ bool Pacman::Update(float aTime)
 bool Pacman::UpdateInput()
 {
 	const Uint8* keystate = SDL_GetKeyboardState(NULL);
-
+	
 	if (keystate[SDL_SCANCODE_UP])
+	{
 		myNextMovement = Vector2f(0.f, -1.f);
+		myAvatar->ChangeState(MOVING_UP);
+	}
 	else if (keystate[SDL_SCANCODE_DOWN])
+	{
 		myNextMovement = Vector2f(0.f, 1.f);
+		myAvatar->ChangeState(MOVING_DOWN);
+	}
 	else if (keystate[SDL_SCANCODE_RIGHT])
+	{
 		myNextMovement = Vector2f(1.f, 0.f);
-	else if (keystate[SDL_SCANCODE_LEFT])
+		myAvatar->ChangeState(MOVING_RIGHT);
+	}
+	else if (keystate[SDL_SCANCODE_LEFT]) 
+	{
 		myNextMovement = Vector2f(-1.f, 0.f);
+		myAvatar->ChangeState(MOVING_LEFT);
+	}
 
 	if (keystate[SDL_SCANCODE_ESCAPE])
 		return false;
@@ -195,6 +210,5 @@ bool Pacman::Draw()
 void Pacman::CreateAvatar()
 {
 	myAvatar = new Avatar(Vector2f(13 * 22, 22 * 22));
-	myAvatar->Load(myDrawer->GetRenderer());
 	myAvatar->InitStates();
 }
