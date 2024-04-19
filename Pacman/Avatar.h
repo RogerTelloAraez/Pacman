@@ -4,6 +4,14 @@
 #include "MovableGameEntity.h"
 #include "Vector2f.h"
 
+enum AvatarStates
+{
+	MOVING_UP,
+	MOVING_DOWN,
+	MOVING_LEFT,
+	MOVING_RIGHT,
+};
+
 class Avatar : public MovableGameEntity
 {
 public:
@@ -11,6 +19,7 @@ public:
 	~Avatar(void);
 
 	void Update(float aTime);
+	void InitStates() override;
 
 private:
 

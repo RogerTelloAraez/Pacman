@@ -24,17 +24,16 @@ Pacman* Pacman::Create(Drawer* aDrawer)
 }
 
 Pacman::Pacman(Drawer* aDrawer)
-: myDrawer(aDrawer)
-, myTimeToNextUpdate(0.f)
-, myNextMovement(-1.f,0.f)
-, myScore(0)
-, myFps(0)
-, myLives(3)
-, myGhostGhostCounter(0.f)
+	: myDrawer(aDrawer)
+	, myTimeToNextUpdate(0.f)
+	, myNextMovement(-1.f, 0.f)
+	, myScore(0)
+	, myFps(0)
+	, myLives(3)
+	, myGhostGhostCounter(0.f)
 {
-	myAvatar = new Avatar(Vector2f(13*22,22*22));
-	myAvatar->Load(aDrawer->GetRenderer());
-	myGhost = new Ghost(Vector2f(13*22,13*22), aDrawer->GetRenderer());
+	CreateAvatar();
+	myGhost = new Ghost(Vector2f(13 * 22, 13 * 22), aDrawer->GetRenderer());
 	myGhost->Load(aDrawer->GetRenderer());
 	myWorld = new World(aDrawer->GetRenderer());
 }
@@ -46,8 +45,25 @@ Pacman::~Pacman(void)
 bool Pacman::Init()
 {
 	myWorld->Init();
-
 	return true;
+}
+
+void Pacman::UpdateAvatar(float aTime)
+{
+	MoveAvatar();
+	myAvatar->Update(aTime);
+}
+
+void Pacman::UpdateGhosts(float aTime)
+{
+	myGhost->Update(aTime, myWorld);
+}
+
+void Pacman::UpdateGameEntities(float aTime)
+{
+	// If I have time this will need to be changed to a list of entities and update each one
+	UpdateAvatar(aTime);
+	UpdateGhosts(aTime);
 }
 
 bool Pacman::Update(float aTime)
@@ -62,13 +78,11 @@ bool Pacman::Update(float aTime)
 	}
 	else if (myLives <= 0)
 	{
-		myDrawer->DrawText("You lose!", "freefont-ttf\\sfd\\FreeMono.ttf", 20, 70);	
+		myDrawer->DrawText("You lose!", "freefont-ttf\\sfd\\FreeMono.ttf", 20, 70);
 		return true;
 	}
 
-	MoveAvatar();
-	myAvatar->Update(aTime);
-	myGhost->Update(aTime, myWorld);
+	UpdateGameEntities(aTime);
 
 	if (myWorld->HasIntersectedDot(myAvatar->GetPosition()))
 		myScore += 10;
@@ -93,8 +107,8 @@ bool Pacman::Update(float aTime)
 		{
 			myLives--;
 
-			myAvatar->SetPosition(Vector2f(13*22,22*22));
-			myGhost->SetPosition(Vector2f(13*22,13*22));
+			myAvatar->SetPosition(Vector2f(13 * 22, 22 * 22));
+			myGhost->SetPosition(Vector2f(13 * 22, 13 * 22));
 		}
 		else if (myGhost->myIsClaimableFlag && !myGhost->myIsDeadFlag)
 		{
@@ -103,16 +117,16 @@ bool Pacman::Update(float aTime)
 			myGhost->Die(myWorld);
 		}
 	}
-	
+
 	if (aTime > 0)
-		myFps = (int) (1 / aTime);
+		myFps = (int)(1 / aTime);
 
 	return true;
 }
 
 bool Pacman::UpdateInput()
 {
-	const Uint8 *keystate = SDL_GetKeyboardState(NULL);
+	const Uint8* keystate = SDL_GetKeyboardState(NULL);
 
 	if (keystate[SDL_SCANCODE_UP])
 		myNextMovement = Vector2f(0.f, -1.f);
@@ -176,4 +190,11 @@ bool Pacman::Draw()
 	myDrawer->DrawText(fpsString.c_str(), "freefont-ttf\\sfd\\FreeMono.ttf", 930, 50);
 
 	return true;
+}
+
+void Pacman::CreateAvatar()
+{
+	myAvatar = new Avatar(Vector2f(13 * 22, 22 * 22));
+	myAvatar->Load(myDrawer->GetRenderer());
+	myAvatar->InitStates();
 }

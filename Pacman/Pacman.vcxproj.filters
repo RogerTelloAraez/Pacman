@@ -28,6 +28,9 @@
     <Filter Include="Game\GameUtils\Animation">
       <UniqueIdentifier>{1ad5e83e-8ecf-4cd9-a3bd-232fc3494ff3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\GameUtils\States">
+      <UniqueIdentifier>{4d6310db-6d75-404d-8483-4ad0ae37d592}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Pacman.cpp">
@@ -70,14 +73,23 @@
       <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="State.cpp">
-      <Filter>Game\GameUtils</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Game\GameUtils\Animation</Filter>
     </ClCompile>
     <ClCompile Include="Teleport.cpp">
       <Filter>Game\Game entities\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Game\GameUtils\States</Filter>
+    </ClCompile>
+    <ClCompile Include="State_MoveUp.cpp">
+      <Filter>Game\GameUtils\States</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderModule.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,14 +132,26 @@
     <ClInclude Include="Vector2f.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Game\GameUtils</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Game\GameUtils\Animation</Filter>
     </ClInclude>
     <ClInclude Include="Teleport.h">
       <Filter>Game\Game entities\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Game\GameUtils\States</Filter>
+    </ClInclude>
+    <ClInclude Include="StateData.h">
+      <Filter>Game\GameUtils\States</Filter>
+    </ClInclude>
+    <ClInclude Include="State_MoveUp.h">
+      <Filter>Game\GameUtils\States</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderModule.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

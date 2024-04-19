@@ -130,9 +130,12 @@
     <ClCompile Include="MovableGameEntity.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="PathmapTile.cpp" />
+    <ClCompile Include="RenderModule.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="State_MoveUp.cpp" />
     <ClCompile Include="StaticGameEntity.cpp" />
     <ClCompile Include="Teleport.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vector2f.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -148,9 +151,13 @@
     <ClInclude Include="MovableGameEntity.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="PathmapTile.h" />
+    <ClInclude Include="RenderModule.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateData.h" />
+    <ClInclude Include="State_MoveUp.h" />
     <ClInclude Include="StaticGameEntity.h" />
     <ClInclude Include="Teleport.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2f.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>

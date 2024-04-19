@@ -2,7 +2,7 @@
 
 #include <vector>
 
-class SDL_Texture;
+struct SDL_Texture;
 class Animation
 {
 public:

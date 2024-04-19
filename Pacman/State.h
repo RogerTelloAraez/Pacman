@@ -1,15 +1,20 @@
 #pragma once
 
 #include "Animation.h"
+#include "RenderModule.h"
 
+class GameEntity;
 class State
 {
 public:
-	State(SDL_Texture* sprite, void (*movementCallback)());
+	State(const char* defaultImage, GameEntity& subjectEntity);
 	~State();
 
+	virtual void Update();
+
 private:
-	SDL_Texture* sprite;
-	void (*movementCallback)();
+	GameEntity* subjectEntity;
 };
+
+extern RenderModule* renderModule; 
 

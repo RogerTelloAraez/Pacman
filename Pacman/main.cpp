@@ -1,10 +1,13 @@
 #include "SDL.h"
 #include "SDL_image.h"
+#include "RenderModule.h"
 #include "SDL_ttf.h"
 #include "assert.h"
 #include "pacman.h"
 #include "drawer.h"
 #include <iostream>
+
+RenderModule* renderModule = NULL;
 
 int main(int argc, char **argv)
 {
@@ -17,6 +20,7 @@ int main(int argc, char **argv)
 	
 	SDL_Window* window = SDL_CreateWindow("Pacman", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1024, 768, SDL_WINDOW_OPENGL);
 	SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	renderModule = new RenderModule(window, renderer);
 
 	if(!window)
 	{
@@ -70,6 +74,7 @@ int main(int argc, char **argv)
 
 	delete pacman;
 	delete drawer;
+	delete renderModule;
 
 	TTF_Quit();
 	IMG_Quit();

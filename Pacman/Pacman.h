@@ -18,6 +18,13 @@ public:
 	bool Update(float aTime);
 	bool Draw();
 
+	void UpdateGameEntities(float aTime);
+
+	void UpdateAvatar(float aTime);
+	void UpdateGhosts(float aTime);
+
+	void CreateAvatar();
+
 private:
 	Pacman(Drawer* aDrawer);
 	bool Init();
