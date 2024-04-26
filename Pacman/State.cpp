@@ -1,6 +1,7 @@
 #include "State.h"
 #include "GameEntity.h"
 #include "Texture.h"
+#include "World.h"
 
 State::State(const char* defaultImageName, GameEntity& _subjectEntity)
 {	
@@ -18,6 +19,6 @@ void State::OnEnter()
 {
 }
 
-void State::Update()
+void State::Update(float aTime, World* aWorld)
 {
 }

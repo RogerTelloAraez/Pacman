@@ -33,8 +33,7 @@ Pacman::Pacman(Drawer* aDrawer)
 	, myGhostGhostCounter(0.f)
 {
 	CreateAvatar();
-	myGhost = new Ghost(Vector2f(13 * 22, 13 * 22), aDrawer->GetRenderer());
-	myGhost->Load(aDrawer->GetRenderer());
+	CreateGhosts();
 	myWorld = new World(aDrawer->GetRenderer());
 }
 
@@ -50,7 +49,7 @@ bool Pacman::Init()
 
 void Pacman::UpdateAvatar(float aTime)
 {
-	MoveAvatar();
+	MoveAvatar(); // For now we leave this here since it needs the world to know if it can make the move
 	myAvatar->Update(aTime);
 }
 
@@ -211,4 +210,11 @@ void Pacman::CreateAvatar()
 {
 	myAvatar = new Avatar(Vector2f(13 * 22, 22 * 22));
 	myAvatar->InitStates();
+}
+
+void Pacman::CreateGhosts()
+{
+	myGhost = new Ghost(Vector2f(13 * 22, 13 * 22), myDrawer->GetRenderer());
+	myGhost->Load(myDrawer->GetRenderer());
+	myGhost->InitStates();
 }

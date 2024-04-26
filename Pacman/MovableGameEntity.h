@@ -11,10 +11,15 @@ public:
 	~MovableGameEntity(void);
 
 	void SetNextTile(int anX, int anY);
+	int GetNextTileX() const;
+	int GetNextTileY() const;
+
+	void SetCurrentTile(const int anX, const int anY);
 	int GetCurrentTileX() const { return myCurrentTileX; }
 	int GetCurrentTileY() const { return myCurrentTileY; }
 
 	bool IsAtDestination();
+	bool SetNextTileAsCurrent();
 
 protected:
 

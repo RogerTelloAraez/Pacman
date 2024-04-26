@@ -24,6 +24,7 @@ public:
 	void UpdateGhosts(float aTime);
 
 	void CreateAvatar();
+	void CreateGhosts();
 
 private:
 	Pacman(Drawer* aDrawer);

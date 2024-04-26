@@ -1,6 +1,6 @@
 #include "Avatar.h"
 #include "State.h"
-#include "MovementStates.h";
+#include "AvatarStates.h";
 
 Avatar::Avatar(const Vector2f& aPosition)
 	: MovableGameEntity(aPosition, "")
@@ -16,26 +16,7 @@ void Avatar::Update(float aTime)
 {
 	if (currentState)
 	{
-		currentState->Update();
-	}
-
-	int tileSize = 22;
-
-	Vector2f destination((float)myNextTileX * tileSize, (float)myNextTileY * tileSize);
-	Vector2f direction = destination - myPosition;
-
-	float distanceToMove = aTime * 250.f;
-
-	if (distanceToMove > direction.Length())
-	{
-		myPosition = destination;
-		myCurrentTileX = myNextTileX;
-		myCurrentTileY = myNextTileY;
-	}
-	else
-	{
-		direction.Normalize();
-		myPosition += direction * distanceToMove;
+		currentState->Update(aTime, nullptr);
 	}
 }
 

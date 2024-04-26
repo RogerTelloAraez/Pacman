@@ -11,6 +11,7 @@ enum StateId {
 };
 
 class GameEntity;
+class World;
 class State
 {
 public:
@@ -18,7 +19,7 @@ public:
 	~State();
 
 	virtual void OnEnter();
-	virtual void Update();
+	virtual void Update(float aTime, World* aWorld); // This aWorld, when state inheritance is done, it should only be existing for movement states
 
 protected:
 	GameEntity* subjectEntity;

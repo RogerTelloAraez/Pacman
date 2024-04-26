@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 
+class World;
 class State_MoveDown : public State
 {
 public:
@@ -8,6 +9,6 @@ public:
 	~State_MoveDown();
 
 	void OnEnter() override;
-	void Update() override;
+	void Update(float aTime, World* aWorld) override;
 };
 
