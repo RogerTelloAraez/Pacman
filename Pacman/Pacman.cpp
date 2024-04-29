@@ -94,8 +94,10 @@ bool Pacman::Update(float aTime)
 	if (myWorld->HasIntersectedBigDot(myAvatar->GetPosition()))
 	{
 		myScore += 20;
+		// move all this logic inside the vulnerable state
 		myGhostGhostCounter = 20.f;
 		myGhost->myIsClaimableFlag = true;
+		myGhost->ChangeState(VULNERABLE);
 	}
 
 	if (myGhostGhostCounter <= 0)
@@ -108,15 +110,14 @@ bool Pacman::Update(float aTime)
 		if (myGhostGhostCounter <= 0.f)
 		{
 			myLives--;
-
 			myAvatar->SetPosition(Vector2f(13 * 22, 22 * 22));
 			myGhost->SetPosition(Vector2f(13 * 22, 13 * 22));
 		}
 		else if (myGhost->myIsClaimableFlag && !myGhost->myIsDeadFlag)
 		{
 			myScore += 50;
-			myGhost->myIsDeadFlag = true;
 			myGhost->Die(myWorld);
+			myGhost->ChangeState(DEAD);
 		}
 	}
 

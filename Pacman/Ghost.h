@@ -40,6 +40,8 @@ public:
 	Vector2f GetDesiredMovement() const;
 	void SetDesiredMovement(const Vector2f aDesiredMovement);
 
+	std::list<PathmapTile*> GetPath() const;
+
 private:
 	std::map<GhostStateType, State*> stateList;
 

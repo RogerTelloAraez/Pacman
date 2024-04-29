@@ -37,6 +37,12 @@ void Ghost::InitStates()
 	State_Roaming* state_roaming = new State_Roaming(*this);
 	AddState(state_roaming, ROAMING);
 
+	State_Vulnerable* state_vulnerable = new State_Vulnerable(*this);
+	AddState(state_vulnerable, VULNERABLE);
+
+	State_Dead* state_dead = new State_Dead(*this);
+	AddState(state_dead, DEAD);
+
 	ChangeState(ROAMING);
 }
 
@@ -47,7 +53,7 @@ void Ghost::Update(float aTime, World* aWorld)
 		currentState->Update(aTime, aWorld);
 	}
 
-	float speed = 30.f;
+	/*float speed = 30.f;
 	int nextTileX = GetCurrentTileX() + myDesiredMovementX;
 	int nextTileY = GetCurrentTileY() + myDesiredMovementY;
 
@@ -106,7 +112,7 @@ void Ghost::Update(float aTime, World* aWorld)
 	{
 		direction.Normalize();
 		myPosition += direction * distanceToMove;
-	}
+	}*/
 }
 
 void Ghost::SetImage(const char* anImage)
@@ -143,4 +149,9 @@ Vector2f Ghost::GetDesiredMovement() const
 void Ghost::SetDesiredMovement(const Vector2f aDesiredMovement)
 {
 	desiredMovement = aDesiredMovement;
+}
+
+std::list<PathmapTile*> Ghost::GetPath() const
+{
+	return myPath;
 }
