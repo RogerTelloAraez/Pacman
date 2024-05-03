@@ -1,2 +1,11 @@
-﻿  Pacman.cpp
+﻿  Ghost.cpp
+  Pacman.cpp
+  State_Dead.cpp
+  State_Roaming.cpp
+C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\State_Roaming.cpp(26,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\State_Roaming.cpp(27,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  State_Vulnerable.cpp
+C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\State_Vulnerable.cpp(26,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\State_Vulnerable.cpp(27,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
   Pacman.vcxproj -> C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Debug\Pacman.exe

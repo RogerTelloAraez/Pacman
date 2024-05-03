@@ -29,30 +29,26 @@ public:
 	bool myIsDeadFlag;
 
 	void SetImage(const char* anImage);
-
 	void Die(World* aWorld);
-
 	void Draw(Drawer* aDrawer);
 
 	void AddState(State* newState, GhostStateType stateType);
-	void ChangeState(const GhostStateType newState);
+	void ChangeState(const GhostStateType newState, World* aWorld = nullptr);
 
 	Vector2f GetDesiredMovement() const;
 	void SetDesiredMovement(const Vector2f aDesiredMovement);
 
-	std::list<PathmapTile*> GetPath() const;
+public:
+	std::list<PathmapTile*> myPath;
 
 private:
 	std::map<GhostStateType, State*> stateList;
 
 protected:
-
 	int myDesiredMovementX;
 	int myDesiredMovementY;
 
 	Vector2f desiredMovement;
-
-	std::list<PathmapTile*> myPath;
 	SDL_Texture* deadTexture;
 	SDL_Texture* vulnerableTexture;
 

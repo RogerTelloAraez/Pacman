@@ -13,7 +13,7 @@ State_MoveRight::~State_MoveRight()
 {
 }
 
-void State_MoveRight::OnEnter()
+void State_MoveRight::OnEnter(World* aWorld)
 {
 	Texture textureData = renderModule->LoadImage("open_32.png");
 	subjectEntity->SetTexture(textureData.texture);

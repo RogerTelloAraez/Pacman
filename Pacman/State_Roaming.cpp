@@ -11,7 +11,7 @@ State_Roaming::~State_Roaming()
 {
 }
 
-void State_Roaming::OnEnter()
+void State_Roaming::OnEnter(World* aWorld)
 {
 	Texture textureData = renderModule->LoadImage("ghost_32_red.png"); // Try to use same image is loaded above
 	subjectEntity->SetTexture(textureData.texture);

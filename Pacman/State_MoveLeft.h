@@ -8,7 +8,7 @@ public:
 	State_MoveLeft(GameEntity& gameEntity);
 	~State_MoveLeft();
 
-	void OnEnter() override;
+	void OnEnter(World* aWorld) override;
 	void Update(float aTime, World* aWorld) override;
 };
 

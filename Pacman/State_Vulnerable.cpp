@@ -11,7 +11,7 @@ State_Vulnerable::~State_Vulnerable()
 {
 }
 
-void State_Vulnerable::OnEnter()
+void State_Vulnerable::OnEnter(World* aWorld)
 {
 	Texture textureData = renderModule->LoadImage("Ghost_Vulnerable_32.png"); // Try to use same image is loaded above
 	subjectEntity->SetTexture(textureData.texture);

@@ -18,7 +18,7 @@ public:
 	State(const char* defaultImage, GameEntity& subjectEntity);
 	~State();
 
-	virtual void OnEnter();
+	virtual void OnEnter(World* aWorld);
 	virtual void Update(float aTime, World* aWorld); // This aWorld, when state inheritance is done, it should only be existing for movement states
 
 protected:

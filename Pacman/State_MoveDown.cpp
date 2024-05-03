@@ -13,7 +13,7 @@ State_MoveDown::~State_MoveDown()
 {
 }
 
-void State_MoveDown::OnEnter()
+void State_MoveDown::OnEnter(World* aWorld)
 {
 	// This needs to sabe the image inside to not hardcode it if I have time
 	Texture textureData = renderModule->LoadImage("open_down_32.png");

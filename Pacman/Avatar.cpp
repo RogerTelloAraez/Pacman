@@ -45,5 +45,5 @@ void Avatar::AddState(State* newState, AvatarStateType stateType)
 void Avatar::ChangeState(const AvatarStateType newState)
 {
 	currentState = stateList[newState];
-	currentState->OnEnter();
+	currentState->OnEnter(nullptr);
 }

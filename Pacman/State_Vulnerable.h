@@ -8,7 +8,7 @@ public:
 	State_Vulnerable(GameEntity& gameEntity);
 	~State_Vulnerable();
 
-	void OnEnter() override;
+	void OnEnter(World* aWorld) override;
 	void Update(float aTime, World* aWorld);
 };
 

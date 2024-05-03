@@ -8,7 +8,7 @@ public:
 	State_Dead(GameEntity& gameEntity);
 	~State_Dead();
 
-	void OnEnter() override;
+	void OnEnter(World* aWorld) override;
 	void Update(float aTime, World* aWorld);
 };
 

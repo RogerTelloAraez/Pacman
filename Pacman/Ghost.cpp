@@ -52,67 +52,6 @@ void Ghost::Update(float aTime, World* aWorld)
 	{
 		currentState->Update(aTime, aWorld);
 	}
-
-	/*float speed = 30.f;
-	int nextTileX = GetCurrentTileX() + myDesiredMovementX;
-	int nextTileY = GetCurrentTileY() + myDesiredMovementY;
-
-	if (myIsDeadFlag)
-		speed = 120.f;
-
-	if (IsAtDestination())
-	{
-		if (!myPath.empty())
-		{
-			PathmapTile* nextTile = myPath.front();
-			myPath.pop_front();
-			SetNextTile(nextTile->myX, nextTile->myY);
-		}
-		else if (aWorld->TileIsValid(nextTileX, nextTileY))
-		{
-			SetNextTile(nextTileX, nextTileY);
-		}
-		else
-		{
-			if (myDesiredMovementX == 1)
-			{
-				myDesiredMovementX = 0;
-				myDesiredMovementY = 1;
-			} else if (myDesiredMovementY == 1)
-			{
-				myDesiredMovementX = -1;
-				myDesiredMovementY = 0;			
-			} else if (myDesiredMovementX == -1)
-			{
-				myDesiredMovementX = 0;
-				myDesiredMovementY = -1;
-			} else
-			{
-				myDesiredMovementX = 1;
-				myDesiredMovementY = 0;
-			}
-
-			myIsDeadFlag = false;
-		}
-	}
-
-	int tileSize = 22;
-	Vector2f destination((float)myNextTileX * tileSize, (float)myNextTileY * tileSize);
-	Vector2f direction = destination - myPosition;
-
-	float distanceToMove = aTime * speed;
-
-	if (distanceToMove > direction.Length())
-	{
-		myPosition = destination;
-		myCurrentTileX = myNextTileX;
-		myCurrentTileY = myNextTileY;
-	}
-	else
-	{
-		direction.Normalize();
-		myPosition += direction * distanceToMove;
-	}*/
 }
 
 void Ghost::SetImage(const char* anImage)
@@ -135,10 +74,10 @@ void Ghost::AddState(State* newState, GhostStateType stateType)
 	stateList.insert(std::pair<GhostStateType, State*>(stateType, newState));
 }
 
-void Ghost::ChangeState(const GhostStateType newState)
+void Ghost::ChangeState(const GhostStateType newState, World* aWorld )
 {
 	currentState = stateList[newState];
-	currentState->OnEnter();
+	currentState->OnEnter(aWorld);
 }
 
 Vector2f Ghost::GetDesiredMovement() const
@@ -151,7 +90,3 @@ void Ghost::SetDesiredMovement(const Vector2f aDesiredMovement)
 	desiredMovement = aDesiredMovement;
 }
 
-std::list<PathmapTile*> Ghost::GetPath() const
-{
-	return myPath;
-}

@@ -15,7 +15,7 @@ State::~State()
 {
 }
 
-void State::OnEnter()
+void State::OnEnter(World* aWorld)
 {
 }
 
