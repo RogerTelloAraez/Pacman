@@ -7,6 +7,7 @@
 
 State_MoveDown::State_MoveDown(GameEntity& gameEntity) : State("open_down_32.png", gameEntity)
 {
+	animation = new Animation(.25f, { "open_down_32.png", "closed_down_32.png" });
 }
 
 State_MoveDown::~State_MoveDown()
@@ -23,6 +24,9 @@ void State_MoveDown::OnEnter(World* aWorld)
 
 void State_MoveDown::Update(float aTime, World* aWorld)
 {
+	SDL_Texture* currentTexture = animation->GetCurrentFrame(aTime);
+	subjectEntity->SetTexture(currentTexture);
+
 	// If I have time we should move this code to a parent state class State_Move
 	int tileSize = 22;
 	MovableGameEntity* movableSubjectEntity = (MovableGameEntity*)subjectEntity;

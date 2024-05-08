@@ -6,7 +6,7 @@
 
 State_MoveUp::State_MoveUp(GameEntity& gameEntity) : State("open_up_32.png", gameEntity)
 {
-
+	animation = new Animation(.25f, { "open_up_32.png", "closed_up_32.png" });
 }
 
 State_MoveUp::~State_MoveUp()
@@ -22,6 +22,9 @@ void State_MoveUp::OnEnter(World* aWorld)
 
 void State_MoveUp::Update(float aTime, World* aWorld)
 {
+	SDL_Texture* currentTexture = animation->GetCurrentFrame(aTime);
+	subjectEntity->SetTexture(currentTexture);
+
 	int tileSize = 22;
 	MovableGameEntity* movableSubjectEntity = (MovableGameEntity*)subjectEntity;
 

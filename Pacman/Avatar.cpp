@@ -34,7 +34,7 @@ void Avatar::InitStates()
 	State_MoveRight* state_moveRight = new State_MoveRight(*this);
 	AddState(state_moveRight, MOVING_RIGHT);
 
-	ChangeState(MOVING_UP);
+	ChangeState(MOVING_LEFT);
 }
 
 void Avatar::AddState(State* newState, AvatarStateType stateType)

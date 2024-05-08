@@ -10,5 +10,8 @@ public:
 
 	void OnEnter(World* aWorld) override;
 	void Update(float aTime, World* aWorld) override;
+
+private:
+	Animation* animation;
 };
 

@@ -33,21 +33,20 @@ private:
 	void MoveAvatar();
 	bool CheckEndGameCondition();
 
+	// This could be added into a struct
 	Drawer* myDrawer;
-
-	float myTimeToNextUpdate;
-	float myGhostGhostCounter;
-
-	int myLives;
-	int myScore;
-	int myFps;
-
-	Vector2f myNextMovement;
-
 	Avatar* myAvatar;
 	Ghost* myGhost;
 	World* myWorld;
 
+	float		myTimeToNextUpdate;
+	float		myGhostGhostCounter;
+
+	int			myLives;
+	int			myScore;
+	int			myFps;
+
+	Vector2f	myNextMovement;
 };
 
 #endif // PACMAN_H

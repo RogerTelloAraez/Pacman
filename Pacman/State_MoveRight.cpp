@@ -7,6 +7,7 @@
 
 State_MoveRight::State_MoveRight(GameEntity& gameEntity) : State("open_32.png", gameEntity)
 {
+	animation = new Animation(.25f, { "open_right_32.png", "closed_right_32.png" });
 }
 
 State_MoveRight::~State_MoveRight()
@@ -22,6 +23,9 @@ void State_MoveRight::OnEnter(World* aWorld)
 
 void State_MoveRight::Update(float aTime, World* aWorld)
 {
+	SDL_Texture* currentTexture = animation->GetCurrentFrame(aTime);
+	subjectEntity->SetTexture(currentTexture);
+
 	int tileSize = 22;
 	MovableGameEntity* movableSubjectEntity = (MovableGameEntity*)subjectEntity;
 
