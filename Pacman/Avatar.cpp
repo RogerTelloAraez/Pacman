@@ -22,13 +22,13 @@ void Avatar::Update(float aTime)
 
 void Avatar::InitStates()
 {
-	State_MoveDown* state_moveDown = new State_MoveDown(*this);
+	State_Move* state_moveDown = new State_Move(*this, "open_down_32.png", "closed_down_32.png");
 	AddState(state_moveDown, MOVING_DOWN);
 
-	State_MoveLeft* state_moveLeft = new State_MoveLeft(*this);
+	State_Move* state_moveLeft = new State_Move(*this, "open_left_32.png", "closed_left_32.png");
 	AddState(state_moveLeft, MOVING_LEFT);
 
-	State_MoveUp* state_moveUp = new State_MoveUp(*this);
+	State_Move* state_moveUp = new State_Move(*this, "open_up_32.png", "closed_up_32.png");
 	AddState(state_moveUp, MOVING_UP);
 
 	State_Move* state_moveRight = new State_Move(*this, "open_right_32.png", "closed_right_32.png");
