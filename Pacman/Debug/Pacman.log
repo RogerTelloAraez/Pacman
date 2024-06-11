@@ -1,7 +1,3 @@
 ﻿  Avatar.cpp
 C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\Avatar.cpp(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\AvatarStates.h(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\AvatarStates.h(6,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\AvatarStates.h(7,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Pacman\AvatarStates.h(8,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Pacman.vcxproj -> C:\Users\rtelloiaraez\Desktop\GitHub Repos\Pacman\Debug\Pacman.exe

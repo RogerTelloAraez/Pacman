@@ -1,6 +1,6 @@
 #include "Avatar.h"
 #include "State.h"
-#include "AvatarStates.h";
+#include "State_Move.h";
 
 Avatar::Avatar(const Vector2f& aPosition)
 	: MovableGameEntity(aPosition, "")
@@ -29,7 +29,7 @@ void Avatar::InitStates()
 	AddState(state_moveLeft, MOVING_LEFT);
 
 	State_Move* state_moveUp = new State_Move(*this, "open_up_32.png", "closed_up_32.png");
-	AddState(state_moveUp, MOVING_UP);
+	AddState(state_moveUp, MOVING_UP); 
 
 	State_Move* state_moveRight = new State_Move(*this, "open_right_32.png", "closed_right_32.png");
 	AddState(state_moveRight, MOVING_RIGHT);
