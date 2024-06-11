@@ -4,15 +4,6 @@
     <Filter Include="Game">
       <UniqueIdentifier>{f35df93c-31bf-4fe5-8c56-70582126ca34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Game entities">
-      <UniqueIdentifier>{f58e9c74-955c-4053-aeb9-45aeae8568c1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Game entities\Static">
-      <UniqueIdentifier>{8e80d2fc-ffcf-4187-b541-d35a283721ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\Game entities\Movable">
-      <UniqueIdentifier>{534d0c22-4923-4d78-b772-8511e1871aa9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\World">
       <UniqueIdentifier>{cf8fdefa-6d25-49ff-99c5-564e289a7b61}</UniqueIdentifier>
     </Filter>
@@ -28,17 +19,32 @@
     <Filter Include="Game\GameUtils\Animation">
       <UniqueIdentifier>{1ad5e83e-8ecf-4cd9-a3bd-232fc3494ff3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\GameUtils\States">
+    <Filter Include="Game\Managers">
+      <UniqueIdentifier>{5576def5-a7a3-42a2-b1b5-196192f2f2c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Observer">
+      <UniqueIdentifier>{9f2eba20-8a7c-47b5-8508-a5d8c18db1f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\States">
       <UniqueIdentifier>{4d6310db-6d75-404d-8483-4ad0ae37d592}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\GameUtils\States\Movement States">
+    <Filter Include="Game\States\Movement States">
       <UniqueIdentifier>{b345765a-c4e4-449f-9183-709b3615d5ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\GameUtils\States\Movement States\Avatar">
+    <Filter Include="Game\States\Movement States\Avatar">
       <UniqueIdentifier>{3a04a9dc-2d61-4809-b4f5-2f959170fe64}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\GameUtils\States\Movement States\Ghosts">
+    <Filter Include="Game\States\Movement States\Ghosts">
       <UniqueIdentifier>{3d29e6ad-dc0b-4e0b-b757-4b016395b249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameEntities">
+      <UniqueIdentifier>{f58e9c74-955c-4053-aeb9-45aeae8568c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameEntities\Static">
+      <UniqueIdentifier>{8e80d2fc-ffcf-4187-b541-d35a283721ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameEntities\Movable">
+      <UniqueIdentifier>{534d0c22-4923-4d78-b772-8511e1871aa9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -46,28 +52,28 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="GameEntity.cpp">
-      <Filter>Game\Game entities</Filter>
+      <Filter>Game\GameEntities</Filter>
     </ClCompile>
     <ClCompile Include="BigDot.cpp">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClCompile>
     <ClCompile Include="Cherry.cpp">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClCompile>
     <ClCompile Include="Dot.cpp">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClCompile>
     <ClCompile Include="StaticGameEntity.cpp">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClCompile>
     <ClCompile Include="Avatar.cpp">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClCompile>
     <ClCompile Include="Ghost.cpp">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClCompile>
     <ClCompile Include="MovableGameEntity.cpp">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClCompile>
     <ClCompile Include="PathmapTile.cpp">
       <Filter>Game\World</Filter>
@@ -86,34 +92,49 @@
       <Filter>Game\GameUtils\Animation</Filter>
     </ClCompile>
     <ClCompile Include="Teleport.cpp">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>Game\GameUtils\States</Filter>
+      <Filter>Game\States</Filter>
     </ClCompile>
     <ClCompile Include="RenderModule.cpp">
       <Filter>Graphics</Filter>
     </ClCompile>
     <ClCompile Include="State_MoveDown.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClCompile>
     <ClCompile Include="State_MoveLeft.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClCompile>
     <ClCompile Include="State_MoveRight.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClCompile>
     <ClCompile Include="State_MoveUp.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClCompile>
     <ClCompile Include="State_Roaming.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
     </ClCompile>
     <ClCompile Include="State_Dead.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
     </ClCompile>
     <ClCompile Include="State_Vulnerable.cpp">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
+    </ClCompile>
+    <ClCompile Include="Observer.cpp">
+      <Filter>Game\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>Game\Observer</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchManager.cpp">
+      <Filter>Game\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="UIManager.cpp">
+      <Filter>Game\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="State_Move.cpp">
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,28 +142,28 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="GameEntity.h">
-      <Filter>Game\Game entities</Filter>
+      <Filter>Game\GameEntities</Filter>
     </ClInclude>
     <ClInclude Include="BigDot.h">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClInclude>
     <ClInclude Include="Cherry.h">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClInclude>
     <ClInclude Include="Dot.h">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClInclude>
     <ClInclude Include="StaticGameEntity.h">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClInclude>
     <ClInclude Include="Avatar.h">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClInclude>
     <ClInclude Include="Ghost.h">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClInclude>
     <ClInclude Include="MovableGameEntity.h">
-      <Filter>Game\Game entities\Movable</Filter>
+      <Filter>Game\GameEntities\Movable</Filter>
     </ClInclude>
     <ClInclude Include="PathmapTile.h">
       <Filter>Game\World</Filter>
@@ -160,10 +181,10 @@
       <Filter>Game\GameUtils\Animation</Filter>
     </ClInclude>
     <ClInclude Include="Teleport.h">
-      <Filter>Game\Game entities\Static</Filter>
+      <Filter>Game\GameEntities\Static</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Game\GameUtils\States</Filter>
+      <Filter>Game\States</Filter>
     </ClInclude>
     <ClInclude Include="RenderModule.h">
       <Filter>Graphics</Filter>
@@ -172,31 +193,49 @@
       <Filter>Graphics</Filter>
     </ClInclude>
     <ClInclude Include="AvatarStates.h">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
     <ClInclude Include="State_MoveDown.h">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
     <ClInclude Include="State_MoveLeft.h">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
     <ClInclude Include="State_MoveRight.h">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
     <ClInclude Include="State_MoveUp.h">
-      <Filter>Game\GameUtils\States\Movement States\Avatar</Filter>
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
     <ClInclude Include="State_Roaming.h">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
     </ClInclude>
     <ClInclude Include="GhostStates.h">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
     </ClInclude>
     <ClInclude Include="State_Dead.h">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
     </ClInclude>
     <ClInclude Include="State_Vulnerable.h">
-      <Filter>Game\GameUtils\States\Movement States\Ghosts</Filter>
+      <Filter>Game\States\Movement States\Ghosts</Filter>
+    </ClInclude>
+    <ClInclude Include="Observer.h">
+      <Filter>Game\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>Game\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchManager.h">
+      <Filter>Game\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="UIManager.h">
+      <Filter>Game\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="UIData.h">
+      <Filter>Game\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="State_Move.h">
+      <Filter>Game\States\Movement States\Avatar</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

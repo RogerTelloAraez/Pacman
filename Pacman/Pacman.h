@@ -8,6 +8,7 @@ class Drawer;
 class Avatar;
 class World;
 class Ghost;
+class UIManager;
 
 class Pacman
 {
@@ -38,10 +39,12 @@ private:
 	Avatar* myAvatar;
 	Ghost* myGhost;
 	World* myWorld;
+	UIManager* scoreManager;
 
 	float		myTimeToNextUpdate;
 	float		myGhostGhostCounter;
 
+	// Those 3 below will be moved to UIManager
 	int			myLives;
 	int			myScore;
 	int			myFps;

@@ -11,6 +11,7 @@ State_MoveUp::State_MoveUp(GameEntity& gameEntity) : State("open_up_32.png", gam
 
 State_MoveUp::~State_MoveUp()
 {
+	delete animation;
 }
 
 void State_MoveUp::OnEnter(World* aWorld)

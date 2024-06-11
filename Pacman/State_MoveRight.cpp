@@ -12,6 +12,7 @@ State_MoveRight::State_MoveRight(GameEntity& gameEntity) : State("open_32.png", 
 
 State_MoveRight::~State_MoveRight()
 {
+	delete animation;
 }
 
 void State_MoveRight::OnEnter(World* aWorld)

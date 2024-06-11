@@ -31,7 +31,7 @@ void Avatar::InitStates()
 	State_MoveUp* state_moveUp = new State_MoveUp(*this);
 	AddState(state_moveUp, MOVING_UP);
 
-	State_MoveRight* state_moveRight = new State_MoveRight(*this);
+	State_Move* state_moveRight = new State_Move(*this, "open_right_32.png", "closed_right_32.png");
 	AddState(state_moveRight, MOVING_RIGHT);
 
 	ChangeState(MOVING_LEFT);

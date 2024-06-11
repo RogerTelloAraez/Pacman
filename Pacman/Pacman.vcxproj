@@ -127,10 +127,14 @@
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="Ghost.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MatchManager.cpp" />
     <ClCompile Include="MovableGameEntity.cpp" />
+    <ClCompile Include="Observer.cpp" />
     <ClCompile Include="Pacman.cpp" />
     <ClCompile Include="PathmapTile.cpp" />
     <ClCompile Include="RenderModule.cpp" />
+    <ClCompile Include="State_Move.cpp" />
+    <ClCompile Include="UIManager.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="State_Dead.cpp" />
     <ClCompile Include="State_MoveDown.cpp" />
@@ -140,6 +144,7 @@
     <ClCompile Include="State_Roaming.cpp" />
     <ClCompile Include="State_Vulnerable.cpp" />
     <ClCompile Include="StaticGameEntity.cpp" />
+    <ClCompile Include="Subject.cpp" />
     <ClCompile Include="Teleport.cpp" />
     <ClCompile Include="Vector2f.cpp" />
     <ClCompile Include="World.cpp" />
@@ -155,10 +160,15 @@
     <ClInclude Include="Ghost.h" />
     <ClInclude Include="AvatarStates.h" />
     <ClInclude Include="GhostStates.h" />
+    <ClInclude Include="MatchManager.h" />
     <ClInclude Include="MovableGameEntity.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="Pacman.h" />
     <ClInclude Include="PathmapTile.h" />
     <ClInclude Include="RenderModule.h" />
+    <ClInclude Include="State_Move.h" />
+    <ClInclude Include="UIData.h" />
+    <ClInclude Include="UIManager.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="State_Dead.h" />
     <ClInclude Include="State_MoveDown.h" />
@@ -168,6 +178,7 @@
     <ClInclude Include="State_Roaming.h" />
     <ClInclude Include="State_Vulnerable.h" />
     <ClInclude Include="StaticGameEntity.h" />
+    <ClInclude Include="Subject.h" />
     <ClInclude Include="Teleport.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2f.h" />

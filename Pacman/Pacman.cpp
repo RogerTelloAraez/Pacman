@@ -10,6 +10,8 @@
 #include "World.h"
 #include "Ghost.h"
 
+#include "UIManager.h"
+
 Pacman* Pacman::Create(Drawer* aDrawer)
 {
 	Pacman* pacman = new Pacman(aDrawer);

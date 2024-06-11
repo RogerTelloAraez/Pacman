@@ -12,6 +12,7 @@ State_MoveDown::State_MoveDown(GameEntity& gameEntity) : State("open_down_32.png
 
 State_MoveDown::~State_MoveDown()
 {
+	delete animation;
 }
 
 void State_MoveDown::OnEnter(World* aWorld)

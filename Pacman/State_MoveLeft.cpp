@@ -13,6 +13,7 @@ State_MoveLeft::State_MoveLeft(GameEntity& gameEntity) : State("open_left_32.png
 
 State_MoveLeft::~State_MoveLeft()
 {
+	delete animation;
 }
 
 void State_MoveLeft::OnEnter(World* aWorld)
